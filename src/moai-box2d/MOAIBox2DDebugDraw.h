@@ -50,6 +50,9 @@ public:
     void DrawPoint(const b2Vec2& p, float32 size, const b2Color& color);
 
     void DrawAABB(b2AABB* aabb, const b2Color& color);
+    
+    // Added for LiquidFun 1.0
+    void DrawParticles(const b2Vec2 *centers, float32 radius, const b2ParticleColor *colors, int32 count);
 };
 
 #endif

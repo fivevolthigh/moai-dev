@@ -197,6 +197,15 @@ void MOAIBox2DDebugDraw::DrawAABB ( b2AABB* aabb, const b2Color& c ) {
 }
 
 //----------------------------------------------------------------//
+void MOAIBox2DDebugDraw::DrawParticles( const b2Vec2* centers, float32 radius, const b2ParticleColor* colors, int32 count ) {
+	// Implemented in terms of the existing debug draw DrawCircle.
+	for( int32 i = 0; i < count; ++ i )
+	{			
+		DrawCircle( centers[ i ], radius, colors[ i ].GetColor() );
+	}
+}
+
+//----------------------------------------------------------------//
 void MOAIBox2DDebugDraw::WriteVtx ( MOAIGfxDevice& gfxDevice, float x, float y ) {
 
 	ZLVec3D vtx;
@@ -206,3 +215,4 @@ void MOAIBox2DDebugDraw::WriteVtx ( MOAIGfxDevice& gfxDevice, float x, float y )
 	gfxDevice.WriteVtx ( vtx );
 	gfxDevice.WriteFinalColor4b ();
 }
+

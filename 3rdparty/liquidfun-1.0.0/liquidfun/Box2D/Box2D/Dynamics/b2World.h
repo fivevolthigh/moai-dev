@@ -255,6 +255,18 @@ public:
 	/// @warning this should be called outside of a time step.
 	void Dump();
 
+	// MOAI: moved from bsSettings.h
+	void SetTimeToSleep(float timeToSleep);
+	float GetTimeToSleep();
+
+	// MOAI: moved from bsSettings.h
+	void SetLinearSleepTolerance(float linearSleepTolerance);
+	float GetLinearSleepTolerance();
+	
+	// MOAI: moved from bsSettings.h
+	void SetAngularSleepTolerance(float angularSleepTolerance);
+	float GetAngularSleepTolerance();
+
 	/// Get API version.
 	const b2Version* GetVersion() const {
 		return m_liquidFunVersion;
@@ -321,6 +333,18 @@ private:
 	bool m_stepComplete;
 
 	b2Profile m_profile;
+
+	// MOAI: moved from bsSettings.h
+	// The time that a body must be still before it will go to sleep.
+	float m_timeToSleep; // 0.5f
+	
+	// MOAI: moved from bsSettings.h
+	// A body cannot sleep if its linear velocity is above this tolerance.
+	float m_linearSleepTolerance; // 0.01f
+	
+	// MOAI: moved from bsSettings.h
+	// A body cannot sleep if its angular velocity is above this tolerance.
+	float m_angularSleepTolerance; // (2.0f / 180.0f * b2_pi)
 
 	/// Used to reference b2_LiquidFunVersion so that it's not stripped from
 	/// the static library.

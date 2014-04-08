@@ -1469,3 +1469,33 @@ void b2World::Dump()
 	b2Log("joints = NULL;\n");
 	b2Log("bodies = NULL;\n");
 }
+
+// MOAI: moved from bsSettings.h
+void b2World::SetTimeToSleep(float timeToSleep) {
+	m_timeToSleep = timeToSleep;
+}
+
+// MOAI: moved from bsSettings.h
+float b2World::GetTimeToSleep() {
+	return m_timeToSleep;
+}
+
+// MOAI: moved from bsSettings.h
+void b2World::SetLinearSleepTolerance(float linearSleepTolerance) {
+	m_linearSleepTolerance = linearSleepTolerance;
+}
+
+// MOAI: moved from bsSettings.h
+float b2World::GetLinearSleepTolerance() {
+	return m_linearSleepTolerance;
+}
+
+// MOAI: moved from bsSettings.h
+void b2World::SetAngularSleepTolerance(float angularSleepTolerance) {
+	m_angularSleepTolerance = angularSleepTolerance;
+}
+
+// MOAI: moved from bsSettings.h
+float b2World::GetAngularSleepTolerance() {
+	return m_angularSleepTolerance;
+}
